@@ -1,0 +1,43 @@
+<div class="signup">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+              <div class="card-img-left d-none d-md-flex">
+              </div>
+              <div class="card-body p-4 p-sm-5">
+                <h5 class="card-title text-center mb-5 fw-light fs-5">Log In</h5>
+                <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+    
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" formControlName="email" placeholder="myusername" required>
+                    <label for="floatingInputUsername">Email </label>
+                    <small class="text-danger modal-form-error"
+                      *ngIf="addSubmitted && logInForm.controls.email.errors?.required">
+                      Enter Email
+                    </small>
+                  </div>
+                  
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                    <small class="text-danger modal-form-error"
+                      *ngIf="addSubmitted && logInForm.controls.password.errors?.required">
+                      Enter Password
+                    </small>
+                  </div>
+    
+                  <div class="d-grid mb-2">
+                    <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Log In</button>
+                  </div>
+    
+                  <a class="d-block text-center mt-2 small" routerLink="/pages/signup">Create an account? Sign Up</a>
+    
+                  <hr class="my-4">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
